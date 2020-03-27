@@ -23,12 +23,39 @@ public class TheRiddler {
 		// 4. If they got the answer right, pop up "correct!" and increase the score by one
 		if(riddle.equals(answer)) {
 			JOptionPane.showMessageDialog(null,"Correct");
+			score++;
+			JOptionPane.showMessageDialog(null, "Your score is "+score);
 		}
 		else {
 			JOptionPane.showMessageDialog(null, "Incorrect, the answer was "+answer);
+			JOptionPane.showMessageDialog(null, "Your score is "+score);
 		}
 		// 5. Otherwise, say "wrong" and tell them the answer
-
+		String riddle2 = JOptionPane.showInputDialog("Who makes it, has no need of it.\r\n" + 
+				"Who buys it, has no use for it. \r\n" + 
+				"Who uses it can neither see nor feel it. \r\n" + 
+				"What is it?");
+		String answer2 = "Coffin";
+		if(riddle2.equals(answer2)) {
+			JOptionPane.showMessageDialog(null,"Correct");
+			score++;
+			JOptionPane.showMessageDialog(null, "Your score is "+score);
+		}
+		else {
+			JOptionPane.showMessageDialog(null,"Incorrect, the answer was a "+answer2);
+			JOptionPane.showMessageDialog(null,"Your score is "+score);
+		}
+		String riddle3 = JOptionPane.showInputDialog("You can drop me from the tallest building and I'll be fine,\r\n"+" but if you drop me in water I die. What am I?");
+		String answer3 = "Paper";
+		if(riddle3.equals(answer3)) {
+			JOptionPane.showMessageDialog(null, "Correct");
+			score++;
+			JOptionPane.showMessageDialog(null, "Your score is "+score);
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Incorrect, the answer was "+answer3);
+			JOptionPane.showMessageDialog(null, "Your score is "+score);
+		}
 		// 6. Add some more riddles
 
 		// 2. Make a pop up to show the score.

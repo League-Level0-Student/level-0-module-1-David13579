@@ -10,6 +10,7 @@ import java.awt.KeyboardFocusManager;
 import java.awt.event.KeyEvent;
 
 import javax.swing.JApplet;
+import javax.swing.JOptionPane;
 
 import org.jointheleague.graphical.robot.Robot;
 
@@ -24,12 +25,31 @@ public class RobotInSpace implements KeyEventDispatcher {
 	 * Robot and rob.setAngle(angle) to change the direction of your Robot. //Do
 	 * not add code here - go to step 2
 	 */
-
+	
 	private void moveRobot(int keyPressed) throws InterruptedException {
 		// 2. Print out the keyPressed variable and write down the numbers for
 		// each arrow key
-
+		int leftarrow = 37;
+		int uparrow = 38;
+		int rightarrow = 39;
+		int downarrow = 40;
 		// 3. If the up arrow is pressed, move the Robot up the screen.
+		if (keyPressed==uparrow) {
+			rob.setAngle(0);
+			rob.microMove(2);
+		}
+		else if(keyPressed==downarrow){
+			rob.setAngle(180);
+			rob.microMove(2);
+		}
+		else if(keyPressed==leftarrow) {
+			rob.setAngle(270);
+			rob.microMove(2);
+		}
+		else if(keyPressed==rightarrow) {
+			rob.setAngle(90);
+			rob.microMove(2);
+		}
 
 		// 4. If the down arrow is pressed, move the Robot down.
 
@@ -45,7 +65,10 @@ public class RobotInSpace implements KeyEventDispatcher {
 		int robotLocationY = rob.getY();
 
 		if (robotLocationX <= 7300 && robotLocationX >= 720 && robotLocationY >= 150 && robotLocationY <= 160)
+			{
+			System.out.println("Eureka");
 			playEureka();
+			}
 	}
 
 	public static void main(String[] args) {
